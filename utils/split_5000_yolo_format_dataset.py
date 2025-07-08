@@ -2,7 +2,6 @@
 
 import os
 import shutil
-import random
 
 # ===============================
 # Konfigurasi
@@ -26,8 +25,7 @@ def sample_and_copy(src_split, dst_split, max_n):
     os.makedirs(dst_img, exist_ok=True)
     os.makedirs(dst_lbl, exist_ok=True)
 
-    all_images = [f for f in os.listdir(src_img) if f.endswith('.jpg')]
-    random.shuffle(all_images)
+    all_images = sorted([f for f in os.listdir(src_img) if f.endswith('.jpg')])
     selected = all_images[:max_n]
 
     for img_name in selected:
