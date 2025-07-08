@@ -1,9 +1,11 @@
+# Codingan untuk menampilkan gambar dengan bounding box dari dataset YOLO format.
+
 import os
 import cv2
 
 # Path folder
-image_dir = 'dataset_yolo_format/train/images'
-label_dir = 'dataset_yolo_format/train/labels'
+image_dir = 'dataset_yolo_format/test/images'
+label_dir = 'dataset_yolo_format/test/labels'
 
 # Kelas untuk tampilan
 class_names = ['player', 'ball', 'referee', 'goalkeeper']

@@ -1,11 +1,13 @@
+# Codingan untuk mengonversi ground truth dari dataset MOT ke format YOLO.
+
 import os
 import cv2
 import pandas as pd
 from shutil import copy2
 
 # Path utama
-source_root = 'dataset/train'
-output_root = 'dataset_yolo_format/train'
+source_root = 'dataset/test'
+output_root = 'dataset_yolo_format/test'
 image_out = os.path.join(output_root, 'images')
 label_out = os.path.join(output_root, 'labels')
 
@@ -90,4 +92,4 @@ for folder in sorted(os.listdir(source_root)):
         # Copy gambar
         copy2(full_img_path, os.path.join(image_out, new_name + '.jpg'))
 
-print("✅ Konversi selesai. Format YOLO tersimpan di dataset_yolo_format/train/")
+print("✅ Konversi selesai. Format YOLO tersimpan di dataset_yolo_format/test/")
