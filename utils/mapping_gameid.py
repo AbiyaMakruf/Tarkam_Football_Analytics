@@ -1,3 +1,5 @@
+# Codingan untuk melakukan mapping gameID sehingga memudahkan untuk mengetahui folder X memiliki gameID berapa.
+
 import os
 from collections import defaultdict
 
