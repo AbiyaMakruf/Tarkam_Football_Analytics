@@ -1,3 +1,5 @@
+#Codingan untuk membagi dataset YOLO format menjadi 5000 file total
+
 import os
 import shutil
 import random
