@@ -2,3 +2,4 @@ SoccerNet
 opencv-python
 pandas
 gdown
+ultralytics
