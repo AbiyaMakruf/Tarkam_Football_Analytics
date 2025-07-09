@@ -1,12 +1,14 @@
 # Codingan untuk mengonversi ground truth dari dataset MOT ke format YOLO.
+# Bisa digunakan untuk membagi menjadi 2 objek (player dan ball) atau 4 objek (player, ball, referee, goalkeeper).
+# Uncomment bagian yang sesuai untuk memilih pembagian objek dan Mapping kelas.
 
 import os
 import cv2
 import pandas as pd
 from shutil import copy2
 
-# Path utama
-source_root = 'dataset/test'
+# Path utama (ubah ke train dan test)
+source_root = 'dataset/train'
 output_root = 'dataset_yolo_format/test'
 image_out = os.path.join(output_root, 'images')
 label_out = os.path.join(output_root, 'labels')
@@ -14,8 +16,11 @@ label_out = os.path.join(output_root, 'labels')
 os.makedirs(image_out, exist_ok=True)
 os.makedirs(label_out, exist_ok=True)
 
-# Mapping kelas
-label2id = {'player': 0, 'ball': 1, 'referee': 2, 'goalkeeper': 3}
+# # Mapping kelas ke ID untuk format YOLO (4 objek)
+# label2id = {'player': 0, 'ball': 1, 'referee': 2, 'goalkeeper': 3}
+
+# Mapping kelas ke ID untuk format YOLO (2 objek)
+label2id = {'player': 0, 'ball': 1}
 
 # Loop semua folder di dalam dataset/train/
 for folder in sorted(os.listdir(source_root)):
@@ -33,14 +38,28 @@ for folder in sorted(os.listdir(source_root)):
                 track_id = int(parts[0].split('_')[1])
                 obj_type = parts[1].split(';')[0].strip()
 
+                ## Jika ingin membagi menjadi 4 object, un comment bagian ini
+                # if obj_type.startswith('player'):
+                #     label = 'player'
+                # elif obj_type.startswith('referee'):
+                #     label = 'referee'
+                # elif obj_type.startswith('ball'):
+                #     label = 'ball'
+                # elif obj_type.startswith('goalkeeper'):
+                #     label = 'goalkeeper'
+                # else:
+                #     continue
+                # tracklet_map[track_id] = label
+
+                # Jika ingin membagi menjadi 2 object (player dan ball), gunakan bagian ini
                 if obj_type.startswith('player'):
                     label = 'player'
                 elif obj_type.startswith('referee'):
-                    label = 'referee'
+                    label = 'player'
                 elif obj_type.startswith('ball'):
                     label = 'ball'
                 elif obj_type.startswith('goalkeeper'):
-                    label = 'goalkeeper'
+                    label = 'player'
                 else:
                     continue
                 tracklet_map[track_id] = label

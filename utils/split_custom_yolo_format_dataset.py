@@ -1,4 +1,4 @@
-#Codingan untuk membagi dataset YOLO format menjadi 5000 file total
+#Codingan untuk membagi dataset YOLO format menjadi 5000 file total (custom split)
 
 import os
 import shutil
