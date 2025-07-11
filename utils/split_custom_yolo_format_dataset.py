@@ -10,8 +10,8 @@ SOURCE_ROOT = 'dataset_yolo_format'
 OUTPUT_ROOT = 'dataset_yolo_format_split/5000'
 MAX_TOTAL = 5000
 SPLIT_PORTION = {
-    'train': 0.8,  # dari dataset_yolo_format/train
-    'valid': 0.1,  # dari dataset_yolo_format/valid
+    'train': 0.7,  # dari dataset_yolo_format/train
+    'valid': 0.2,  # dari dataset_yolo_format/valid
     'test':  0.1   # dari dataset_yolo_format/test
 }
 # ===============================

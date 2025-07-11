@@ -4,8 +4,9 @@ import os
 import cv2
 
 # Path folder
-image_dir = 'dataset_yolo_format/test/images'
-label_dir = 'dataset_yolo_format/test/labels'
+split = "train"
+image_dir = f'dataset_yolo_format/{split}/images'
+label_dir = f'dataset_yolo_format/{split}/labels'
 
 # Kelas untuk tampilan
 class_names = ['player', 'ball', 'referee', 'goalkeeper']

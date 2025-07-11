@@ -8,8 +8,9 @@ import pandas as pd
 from shutil import copy2
 
 # Path utama (ubah ke train dan test)
-source_root = 'dataset/train'
-output_root = 'dataset_yolo_format/test'
+split = "train"
+source_root = f'dataset/{split}'
+output_root = f'dataset_yolo_format/{split}'
 image_out = os.path.join(output_root, 'images')
 label_out = os.path.join(output_root, 'labels')
 
