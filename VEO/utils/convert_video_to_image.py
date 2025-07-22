@@ -49,7 +49,7 @@ video_path = "dataset_video/VEO - IATL IAMA.mp4"
 output_folder_5fps = "dataset_image/VEO - IATL IAMA"
 
 # Tentukan waktu mulai dan selesai dalam detik
-start_time = (7 * 60) + 26  # 7 menit 26 detik
+start_time = (15 * 60) + 58  # 15 menit 58 detik
 end_time = start_time + (1 * 60)  # 1 menit dari start_time
 # end_time = (109 * 60) + 30   # 101 menit 25 detik
 
