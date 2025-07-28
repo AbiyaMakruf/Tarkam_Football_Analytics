@@ -211,3 +211,6 @@ dataset_video/
 dataset_image/
 *.pt
 Tarkam-Football-Analytics-*
+results/
+results2/
+20SecondVideo/
