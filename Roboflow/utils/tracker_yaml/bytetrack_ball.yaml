@@ -1,0 +1,9 @@
+# Ultralytics ByteTrack config (disederhanakan & valid)
+tracker_type: bytetrack            # ['botsort', 'bytetrack']
+track_high_thresh: 0.30            # asosiasi utama; sedikit dinaikkan biar track lebih bersih
+track_low_thresh: 0.10             # asosiasi kedua
+new_track_thresh: 0.25             # inisiasi track baru
+track_buffer: 100                  # tahan track lebih lama (bola sering occlusion)
+match_thresh: 0.80                 # threshold matching
+fuse_score: True                   # gabung skor konfiden dengan IOU sebelum matching
+# min_box_area: 10                 # opsional
