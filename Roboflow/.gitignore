@@ -210,6 +210,8 @@ __marimo__/
 dataset/
 *.pt
 results_track/
+results_track_new/
+secret.txt
 
 # Abaikan semua isi folder predict di dalam results/
 results/**/predict/*
